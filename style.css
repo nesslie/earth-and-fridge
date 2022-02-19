@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Slab&display=swap');
+
+body.main{
+    left: 0px;
+    top: 0px;
+    background: linear-gradient(238.75deg, #26F596 0%, #0499F2 100%);
+    text-align: center;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    min-height: 100vh;
+}
+h1.navBar{
+    position: relative;
+
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    /* identical to box height */
+    color: #FFFFFF;
+}
+
+h2.fridge{
+    position: relative;
+
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight:normal;
+    font-size: 36px;
+    color: #FAFAFA;
+}
+
+p.testing{
+    font-family: Open Sans;
+    font-weight: 600;
+    font-style: italic;
+    color: white;
+    font-size: 24px;
+    max-width: 80vw;
+}
+
+input.form{
+    width: 50vw;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 40px;
+    font-family: Open Sans;
+    font-weight: 600;
+    font-size: 18px;
+    color: #2D394B;
+    box-shadow: 0px 0px 32px rgba(103, 103, 103, 0.8);
+}
+
+.buttonUpdate {
+    background: linear-gradient(270deg, #fc00ff 0%, #00dbde 100%);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 18px;
+    border-radius: 40px;
+    box-shadow: 0px 0px 32px rgba(103, 103, 103, 0.8);
+}
+.buttonPrint {
+    background: linear-gradient(270deg, #FF4E50 0%, #F9D423 100%);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 18px;
+    border-radius: 40px;
+    box-shadow: 0px 0px 32px rgba(103, 103, 103, 0.8);
+}
+
+.buttonRemove{
+    background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 18px;
+    border-radius: 40px;
+    box-shadow: 0px 0px 32px rgba(103, 103, 103, 0.8);
+}
+
+p.bolder{
+    font-family: Open Sans;
+    font-weight: 600;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+}
+
+p.content{
+    font-family: Open Sans;
+    font-weight:600;
+    color: white;
+    font-size: 24px;
+    max-width: 80vw;
+}
