@@ -1,3 +1,68 @@
+
+var userStyled = {};
+const inputs = [];
+
+
+class Fridge{
+  calculateSustainability(){
+    const temp = [0,0];
+    for(var i = 0; i < userStyled.length; i++){
+      if(userStyled[i]["Tag"] == "Sustainable"){
+        temp[0]++;
+      } else {
+        temp[1]++;
+      }
+    }
+    var str = temp[0] + " of your choice(s) were sustainable for the environment! Sadly " + temp[1] + " choice(s) were unsustainable for the planet. Try using our suggestions next time you go shopping &#x1f30e;"
+    document.getElementById("summary").innerHTML = str;
+  }
+  removeIndex(){
+    var temp = document.getElementById("formID").value;
+    temp = inputs.indexOf(temp);
+    if (temp > -1) { inputs.splice(temp, 1)}
+    document.getElementById("demo").innerHTML = inputs;
+  }
+
+  add2user(arg){
+    arg.push(document.getElementById("formID").value);
+    document.getElementById("demo").innerHTML = arg;
+  }
+
+  mergedUpdate(arg_input){
+    this.merge(arg_input);
+    var txt = '';
+    for(var i = 0; i < Object.keys(userStyled).length; i++){
+     txt += "Item Name: " + userStyled[i]["Item Name"] + "</br>";
+     txt += "Verdict: " + userStyled[i]["Tag"] + "</br>";
+     txt += "Calories: " + userStyled[i]["Calories"] + "</br>";
+     txt += "Description: " + userStyled[i]["Sustainability"] + "</br>";
+     txt += "Suggested Replacements: " + userStyled[i]["Suggested Replacements"] + "</br></br>";
+    }
+    document.getElementById("merged").innerHTML = txt;
+    this.calculateSustainability();
+  }
+
+  merge(arg_inputs){
+    var x;
+    const test = [];
+    for(x in arg_inputs){
+      for(var i = 0; i < Object.keys(db).length; i++){
+        if(arg_inputs[x] == db[i]["Item Name"]){
+          test[x] = db[i];
+          break;
+        }
+        test[x] = "Invalid Input";
+      }
+    }
+    userStyled = test;
+  }
+
+}
+
+var smartFridge = new Fridge([]);
+
+
+
 var db = [{"Item Name":"Apples","Sustainability":"Apples are highly sustainable, only requiring 822 liters of water per 1kg of apples. Apples also have a very low carbon footprint, producing only 0.7kg of CO2 for 1kg apples.", 
 "Suggested Replacements":"None","Calories":"Around 95 per fruit","Tag":"Sustainable"},
 
@@ -195,68 +260,3 @@ var db = [{"Item Name":"Apples","Sustainability":"Apples are highly sustainable,
                             
 {"Item Name":"Radishes","Sustainability":"Radishes are highly sustainable, only requiring 387 liters of water per 1kg of radishes. Radishes also have a very low carbon footprint, producing only 0.16 kg of CO2 for 1kg radishes.", 
          "Suggested Replacements":"None","Calories":"Around 16 kcal for 100g","Tag":"Sustainable"}];
-
-var userStyled = {};
-const inputs = [];
-
-
-class Fridge{
-  calculateSustainability(){
-    const temp = [0,0];
-    for(var i = 0; i < userStyled.length; i++){
-      if(userStyled[i]["Tag"] == "Sustainable"){
-        temp[0]++;
-      } else {
-        temp[1]++;
-      }
-    }
-    var str = temp[0] + " of your choice(s) were sustainable for the environment! Sadly " + temp[1] + " choice(s) were unsustainable for the planet. Try using our suggestions next time you go shopping &#x1f30e;"
-    document.getElementById("summary").innerHTML = str;
-  }
-  removeIndex(){
-    var temp = document.getElementById("formID").value;
-    temp = inputs.indexOf(temp);
-    if (temp > -1) { inputs.splice(temp, 1)}
-    document.getElementById("demo").innerHTML = inputs;
-  }
-
-  add2user(arg){
-    arg.push(document.getElementById("formID").value);
-    document.getElementById("demo").innerHTML = arg;
-  }
-
-  mergedUpdate(arg_input){
-    this.merge(arg_input);
-    var txt = '';
-    for(var i = 0; i < Object.keys(userStyled).length; i++){
-     txt += "Item Name: " + userStyled[i]["Item Name"] + "</br>";
-     txt += "Verdict: " + userStyled[i]["Tag"] + "</br>";
-     txt += "Calories: " + userStyled[i]["Calories"] + "</br>";
-     txt += "Description: " + userStyled[i]["Sustainability"] + "</br>";
-     txt += "Suggested Replacements: " + userStyled[i]["Suggested Replacements"] + "</br></br>";
-    }
-    document.getElementById("merged").innerHTML = txt;
-    this.calculateSustainability();
-  }
-
-  merge(arg_inputs){
-    var x;
-    const test = [];
-    for(x in arg_inputs){
-      for(var i = 0; i < Object.keys(db).length; i++){
-        if(arg_inputs[x] == db[i]["Item Name"]){
-          test[x] = db[i];
-          break;
-        }
-        test[x] = "Invalid Input";
-      }
-    }
-    userStyled = test;
-  }
-
-}
-
-var smartFridge = new Fridge([]);
-
-
-
